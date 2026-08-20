@@ -1,7 +1,7 @@
 # ************************************************************************************************
-# Canvas App: App Configuration & Global State (NOWledge Architecture Standard)
+# Canvas App: App Configuration & Global State (Source Code Schema V3)
 # ************************************************************************************************
-App As appinfo:
+App:
   Properties:
     BackEnabled: =true
     LoadingSpinnerColor: =RGBA(0, 43, 127, 1)
