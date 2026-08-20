@@ -1,5 +1,5 @@
 # ************************************************************************************************
-# Canvas App Screen: scrDashboard (Change Management eBFactory)
+# Canvas App Screen Base: scrDashboard
 # ************************************************************************************************
 Screens:
   scrDashboard:
@@ -32,32 +32,6 @@ Screens:
                   PaddingTop: =24
                   Width: =260
                 Children:
-                  - imgLogo:
-                      Control: Image@2.2.0
-                      Properties:
-                        Fill: =RGBA(255, 255, 255, 1)
-                        Height: =44
-                        Image: '="https://ebfactoryco-my.sharepoint.com/:i:/r/personal/javier_contreras_ebfactory_com/Documents/logo_ebfactory.png"'
-                        RadiusBottomLeft: =8
-                        RadiusBottomRight: =8
-                        RadiusTopLeft: =8
-                        RadiusTopRight: =8
-                        Width: =160
-                  - lblBrandSub:
-                      Control: Label@2.5.1
-                      Properties:
-                        Color: =RGBA(255, 255, 255, 0.5)
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Bold
-                        Height: =20
-                        Size: =10
-                        Text: ="CHANGE MANAGEMENT"
-                  - conDivider1:
-                      Control: Rectangle@2.3.0
-                      Properties:
-                        Fill: =RGBA(255, 255, 255, 0.1)
-                        Height: =1
-                        Width: =Parent.Width - 32
                   - btnNavDashboard:
                       Control: Classic/Button@2.2.0
                       Properties:
@@ -84,7 +58,7 @@ Screens:
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="Nuevo registro de cambio"
+                        Text: ="Nueva Solicitud"
                         Width: =Parent.Width - 32
                   - btnNavMisSol:
                       Control: Classic/Button@2.2.0
@@ -98,7 +72,7 @@ Screens:
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="Mis solicitudes activas"
+                        Text: ="Mis Solicitudes"
                         Width: =Parent.Width - 32
                   - btnNavCierre:
                       Control: Classic/Button@2.2.0
@@ -112,28 +86,8 @@ Screens:
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="Ejecución y cierre"
+                        Text: ="Ejecución y Cierre"
                         Width: =Parent.Width - 32
-                  - conUserInfo:
-                      Control: GroupContainer@1.5.0
-                      Variant: AutoLayout
-                      Properties:
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =50
-                        LayoutDirection: =LayoutDirection.Vertical
-                        PaddingLeft: =4
-                        PaddingTop: =16
-                        Width: =Parent.Width - 32
-                      Children:
-                        - lblUserEmail:
-                            Control: Label@2.5.1
-                            Properties:
-                              AutoHeight: =true
-                              Color: =RGBA(255, 255, 255, 0.6)
-                              Font: =Font.'Segoe UI'
-                              Size: =11
-                              Text: '="User().Email: " & User().Email'
-                              Wrap: =true
             - conWorkArea:
                 Control: GroupContainer@1.5.0
                 Variant: AutoLayout
@@ -153,84 +107,41 @@ Screens:
                       Control: GroupContainer@1.5.0
                       Variant: AutoLayout
                       Properties:
-                        Height: =65
+                        Height: =60
                         LayoutDirection: =LayoutDirection.Vertical
-                        LayoutGap: =4
                       Children:
                         - lblHeaderTitle:
                             Control: Label@2.5.1
                             Properties:
-                              AutoHeight: =true
                               Color: =RGBA(0, 43, 127, 1)
                               Font: =Font.'Segoe UI'
                               FontWeight: =FontWeight.Bold
-                              Height: =32
                               Size: =22
-                              Text: ="Inicio / Dashboard"
-                        - lblHeaderSub:
-                            Control: Label@2.5.1
-                            Properties:
-                              AutoHeight: =true
-                              Color: =RGBA(107, 114, 128, 1)
-                              Font: =Font.'Segoe UI'
-                              Height: =20
-                              Size: =12
-                              Text: '="Origen de datos en vivo: lista SharePoint ""Solicitudes_Cambio"""'
+                              Text: ="Dashboard"
                   - conHeroBanner:
                       Control: GroupContainer@1.5.0
                       Variant: AutoLayout
                       Properties:
                         Fill: =RGBA(0, 31, 92, 1)
-                        Height: =240
+                        Height: =140
                         LayoutDirection: =LayoutDirection.Vertical
                         LayoutGap: =12
-                        PaddingBottom: =24
-                        PaddingLeft: =28
-                        PaddingRight: =28
-                        PaddingTop: =24
+                        PaddingBottom: =20
+                        PaddingLeft: =24
+                        PaddingRight: =24
+                        PaddingTop: =20
                         RadiusBottomLeft: =16
                         RadiusBottomRight: =16
                         RadiusTopLeft: =16
                         RadiusTopRight: =16
                       Children:
-                        - lblHeroWelcome:
-                            Control: Label@2.5.1
-                            Properties:
-                              AutoHeight: =true
-                              Color: =RGBA(255, 255, 255, 0.7)
-                              Font: =Font.'Segoe UI'
-                              Height: =20
-                              Size: =13
-                              Text: ="Bienvenido, " & User().FullName
-                        - lblHeroTitle:
-                            Control: Label@2.5.1
-                            Properties:
-                              AutoHeight: =true
-                              Color: =RGBA(255, 255, 255, 1)
-                              Font: =Font.'Segoe UI'
-                              FontWeight: =FontWeight.Bold
-                              Height: =36
-                              Size: =24
-                              Text: ="Panel de control de cambios"
-                        - lblHeroDesc:
-                            Control: Label@2.5.1
-                            Properties:
-                              AutoHeight: =true
-                              Color: =RGBA(255, 255, 255, 0.85)
-                              Font: =Font.'Segoe UI'
-                              Height: =24
-                              Size: =13
-                              Text: ="Registra, haz seguimiento y cierra los cambios de infraestructura, procesos y cumplimiento de eBFactory."
-                              Wrap: =true
                         - conHeroButtons:
                             Control: GroupContainer@1.5.0
                             Variant: AutoLayout
                             Properties:
-                              Height: =48
-                              LayoutAlignItems: =LayoutAlignItems.Center
+                              Height: =44
                               LayoutDirection: =LayoutDirection.Horizontal
-                              LayoutGap: =14
-                              PaddingTop: =8
+                              LayoutGap: =12
                             Children:
                               - btnHeroNuevo:
                                   Control: Classic/Button@2.2.0
@@ -245,8 +156,8 @@ Screens:
                                     RadiusBottomRight: =8
                                     RadiusTopLeft: =8
                                     RadiusTopRight: =8
-                                    Text: ="+ Nuevo registro de cambio"
-                                    Width: =210
+                                    Text: ="Nueva Solicitud"
+                                    Width: =160
                               - btnHeroMisSol:
                                   Control: Classic/Button@2.2.0
                                   Properties:
@@ -260,8 +171,8 @@ Screens:
                                     RadiusBottomRight: =8
                                     RadiusTopLeft: =8
                                     RadiusTopRight: =8
-                                    Text: ="Mis solicitudes activas"
-                                    Width: =170
+                                    Text: ="Mis Solicitudes"
+                                    Width: =150
                               - btnHeroCierre:
                                   Control: Classic/Button@2.2.0
                                   Properties:
@@ -275,13 +186,13 @@ Screens:
                                     RadiusBottomRight: =8
                                     RadiusTopLeft: =8
                                     RadiusTopRight: =8
-                                    Text: ="Ejecución y cierre"
+                                    Text: ="Ejecución y Cierre"
                                     Width: =160
                   - conKPIContainer:
                       Control: GroupContainer@1.5.0
                       Variant: AutoLayout
                       Properties:
-                        Height: =110
+                        Height: =100
                         LayoutDirection: =LayoutDirection.Horizontal
                         LayoutGap: =16
                         Width: =Parent.Width
@@ -295,36 +206,22 @@ Screens:
                               BorderThickness: =1
                               Fill: =RGBA(255, 255, 255, 1)
                               FillPortions: =1
-                              Height: =110
+                              Height: =100
                               LayoutDirection: =LayoutDirection.Vertical
-                              PaddingBottom: =16
                               PaddingLeft: =20
-                              PaddingRight: =20
                               PaddingTop: =16
                               RadiusBottomLeft: =16
                               RadiusBottomRight: =16
                               RadiusTopLeft: =16
                               RadiusTopRight: =16
                             Children:
-                              - lblKPiPendLabel:
-                                  Control: Label@2.5.1
-                                  Properties:
-                                    AutoHeight: =true
-                                    Color: =RGBA(107, 114, 128, 1)
-                                    Font: =Font.'Segoe UI'
-                                    FontWeight: =FontWeight.Bold
-                                    Height: =18
-                                    Size: =11
-                                    Text: ="PENDIENTES"
                               - lblKpiPendVal:
                                   Control: Label@2.5.1
                                   Properties:
-                                    AutoHeight: =true
                                     Color: =RGBA(0, 43, 127, 1)
                                     Font: =Font.'Segoe UI'
                                     FontWeight: =FontWeight.Bold
-                                    Height: =40
-                                    Size: =32
+                                    Size: =28
                                     Text: =Text(CountRows(Filter([@'Solicitudes de Cambios'], Estado_Aprobacion.Value = "Pendiente")))
                         - conKPiAprobadas:
                             Control: GroupContainer@1.5.0
@@ -335,36 +232,22 @@ Screens:
                               BorderThickness: =1
                               Fill: =RGBA(255, 255, 255, 1)
                               FillPortions: =1
-                              Height: =110
+                              Height: =100
                               LayoutDirection: =LayoutDirection.Vertical
-                              PaddingBottom: =16
                               PaddingLeft: =20
-                              PaddingRight: =20
                               PaddingTop: =16
                               RadiusBottomLeft: =16
                               RadiusBottomRight: =16
                               RadiusTopLeft: =16
                               RadiusTopRight: =16
                             Children:
-                              - lblKPiAprobLabel:
-                                  Control: Label@2.5.1
-                                  Properties:
-                                    AutoHeight: =true
-                                    Color: =RGBA(107, 114, 128, 1)
-                                    Font: =Font.'Segoe UI'
-                                    FontWeight: =FontWeight.Bold
-                                    Height: =18
-                                    Size: =11
-                                    Text: ="APROBADAS"
                               - lblKpiAprobVal:
                                   Control: Label@2.5.1
                                   Properties:
-                                    AutoHeight: =true
                                     Color: =RGBA(0, 43, 127, 1)
                                     Font: =Font.'Segoe UI'
                                     FontWeight: =FontWeight.Bold
-                                    Height: =40
-                                    Size: =32
+                                    Size: =28
                                     Text: =Text(CountRows(Filter([@'Solicitudes de Cambios'], Estado_Aprobacion.Value = "Aprobado")))
                         - conKPiRechazadas:
                             Control: GroupContainer@1.5.0
@@ -375,36 +258,22 @@ Screens:
                               BorderThickness: =1
                               Fill: =RGBA(255, 255, 255, 1)
                               FillPortions: =1
-                              Height: =110
+                              Height: =100
                               LayoutDirection: =LayoutDirection.Vertical
-                              PaddingBottom: =16
                               PaddingLeft: =20
-                              PaddingRight: =20
                               PaddingTop: =16
                               RadiusBottomLeft: =16
                               RadiusBottomRight: =16
                               RadiusTopLeft: =16
                               RadiusTopRight: =16
                             Children:
-                              - lblKPiRechLabel:
-                                  Control: Label@2.5.1
-                                  Properties:
-                                    AutoHeight: =true
-                                    Color: =RGBA(107, 114, 128, 1)
-                                    Font: =Font.'Segoe UI'
-                                    FontWeight: =FontWeight.Bold
-                                    Height: =18
-                                    Size: =11
-                                    Text: ="RECHAZADAS"
                               - lblKpiRechVal:
                                   Control: Label@2.5.1
                                   Properties:
-                                    AutoHeight: =true
                                     Color: =RGBA(0, 43, 127, 1)
                                     Font: =Font.'Segoe UI'
                                     FontWeight: =FontWeight.Bold
-                                    Height: =40
-                                    Size: =32
+                                    Size: =28
                                     Text: =Text(CountRows(Filter([@'Solicitudes de Cambios'], Estado_Aprobacion.Value = "Rechazado")))
                         - conKPiCerradas:
                             Control: GroupContainer@1.5.0
@@ -415,36 +284,22 @@ Screens:
                               BorderThickness: =1
                               Fill: =RGBA(255, 255, 255, 1)
                               FillPortions: =1
-                              Height: =110
+                              Height: =100
                               LayoutDirection: =LayoutDirection.Vertical
-                              PaddingBottom: =16
                               PaddingLeft: =20
-                              PaddingRight: =20
                               PaddingTop: =16
                               RadiusBottomLeft: =16
                               RadiusBottomRight: =16
                               RadiusTopLeft: =16
                               RadiusTopRight: =16
                             Children:
-                              - lblKPiCerrLabel:
-                                  Control: Label@2.5.1
-                                  Properties:
-                                    AutoHeight: =true
-                                    Color: =RGBA(107, 114, 128, 1)
-                                    Font: =Font.'Segoe UI'
-                                    FontWeight: =FontWeight.Bold
-                                    Height: =18
-                                    Size: =11
-                                    Text: ="CERRADAS"
                               - lblKpiCerrVal:
                                   Control: Label@2.5.1
                                   Properties:
-                                    AutoHeight: =true
                                     Color: =RGBA(0, 43, 127, 1)
                                     Font: =Font.'Segoe UI'
                                     FontWeight: =FontWeight.Bold
-                                    Height: =40
-                                    Size: =32
+                                    Size: =28
                                     Text: =Text(CountRows(Filter([@'Solicitudes de Cambios'], Estado_Aprobacion.Value = "Cerrado")))
                   - conMovimientosCard:
                       Control: GroupContainer@1.5.0
@@ -465,16 +320,6 @@ Screens:
                         RadiusTopLeft: =16
                         RadiusTopRight: =16
                       Children:
-                        - lblMovTitle:
-                            Control: Label@2.5.1
-                            Properties:
-                              AutoHeight: =true
-                              Color: =RGBA(0, 43, 127, 1)
-                              Font: =Font.'Segoe UI'
-                              FontWeight: =FontWeight.Bold
-                              Height: =28
-                              Size: =16
-                              Text: ="Últimos movimientos"
                         - galUltimosMovimientos:
                             Control: Gallery@2.15.0
                             Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
@@ -490,26 +335,13 @@ Screens:
                               - lblItemTitle:
                                   Control: Label@2.5.1
                                   Properties:
-                                    AutoHeight: =true
                                     Color: =RGBA(31, 41, 55, 1)
                                     Font: =Font.'Segoe UI'
                                     FontWeight: =FontWeight.Bold
-                                    Height: =22
                                     Size: =14
                                     Text: =ThisItem.Title
                                     X: =12
                                     Y: =10
-                              - lblItemSubtitle:
-                                  Control: Label@2.5.1
-                                  Properties:
-                                    AutoHeight: =true
-                                    Color: =RGBA(107, 114, 128, 1)
-                                    Font: =Font.'Segoe UI'
-                                    Height: =18
-                                    Size: =12
-                                    Text: ="CHG-" & ThisItem.ID & " · " & ThisItem.Tipo_Cambio.Value & " · " & ThisItem.Categoria_Cambio.Value
-                                    X: =12
-                                    Y: =34
                               - lblItemStateChip:
                                   Control: Label@2.5.1
                                   Properties:

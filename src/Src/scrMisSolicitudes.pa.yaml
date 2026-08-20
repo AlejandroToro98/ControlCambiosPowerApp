@@ -1,5 +1,5 @@
 # ************************************************************************************************
-# Canvas App Screen: scrMisSolicitudes (Change Management eBFactory)
+# Canvas App Screen Base: scrMisSolicitudes
 # ************************************************************************************************
 Screens:
   scrMisSolicitudes:
@@ -25,46 +25,20 @@ Screens:
                   Height: =Parent.Height
                   LayoutAlignItems: =LayoutAlignItems.Stretch
                   LayoutDirection: =LayoutDirection.Vertical
-                  LayoutGap: =8
-                  PaddingBottom: =20
+                  LayoutGap: =12
+                  PaddingBottom: =24
                   PaddingLeft: =16
                   PaddingRight: =16
                   PaddingTop: =24
                   Width: =260
                 Children:
-                  - imgLogo3:
-                      Control: Image@2.2.0
-                      Properties:
-                        Fill: =RGBA(255, 255, 255, 1)
-                        Height: =44
-                        Image: '="https://ebfactoryco-my.sharepoint.com/:i:/r/personal/javier_contreras_ebfactory_com/Documents/logo_ebfactory.png"'
-                        RadiusBottomLeft: =8
-                        RadiusBottomRight: =8
-                        RadiusTopLeft: =8
-                        RadiusTopRight: =8
-                        Width: =160
-                  - lblBrandSub3:
-                      Control: Label@2.5.1
-                      Properties:
-                        Color: =RGBA(255, 255, 255, 0.5)
-                        Font: =Font.'Segoe UI'
-                        FontWeight: =FontWeight.Bold
-                        Height: =20
-                        Size: =10
-                        Text: ="CHANGE MANAGEMENT"
-                  - conDivider3:
-                      Control: Rectangle@2.3.0
-                      Properties:
-                        Fill: =RGBA(255, 255, 255, 0.1)
-                        Height: =1
-                        Width: =Parent.Width - 32
                   - btnNavDashboard3:
                       Control: Classic/Button@2.2.0
                       Properties:
                         Color: =RGBA(255, 255, 255, 0.8)
                         Fill: =RGBA(0, 0, 0, 0)
                         Font: =Font.'Segoe UI'
-                        Height: =42
+                        Height: =44
                         OnSelect: =Navigate(scrDashboard, ScreenTransition.Fade)
                         RadiusBottomLeft: =8
                         RadiusBottomRight: =8
@@ -78,27 +52,27 @@ Screens:
                         Color: =RGBA(255, 255, 255, 0.8)
                         Fill: =RGBA(0, 0, 0, 0)
                         Font: =Font.'Segoe UI'
-                        Height: =42
+                        Height: =44
                         OnSelect: =Navigate(scrNuevaSolicitud, ScreenTransition.Fade)
                         RadiusBottomLeft: =8
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="Nuevo registro de cambio"
+                        Text: ="Nueva Solicitud"
                         Width: =Parent.Width - 32
                   - btnNavMisSol3:
                       Control: Classic/Button@2.2.0
                       Properties:
                         Color: =RGBA(130, 195, 65, 1)
-                        Fill: =RGBA(255, 255, 255, 0.1)
+                        Fill: =RGBA(255, 255, 255, 0.12)
                         Font: =Font.'Segoe UI'
                         FontWeight: =FontWeight.Semibold
-                        Height: =42
+                        Height: =44
                         RadiusBottomLeft: =8
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="Mis solicitudes activas"
+                        Text: ="Mis Solicitudes"
                         Width: =Parent.Width - 32
                   - btnNavCierre3:
                       Control: Classic/Button@2.2.0
@@ -106,32 +80,14 @@ Screens:
                         Color: =RGBA(255, 255, 255, 0.8)
                         Fill: =RGBA(0, 0, 0, 0)
                         Font: =Font.'Segoe UI'
-                        Height: =42
+                        Height: =44
                         OnSelect: =Navigate(scrEjecucionYCierre, ScreenTransition.Fade)
                         RadiusBottomLeft: =8
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="Ejecución y cierre"
+                        Text: ="Ejecución y Cierre"
                         Width: =Parent.Width - 32
-                  - conUserInfo3:
-                      Control: GroupContainer@1.5.0
-                      Variant: AutoLayout
-                      Properties:
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =60
-                        LayoutDirection: =LayoutDirection.Vertical
-                        PaddingLeft: =4
-                        PaddingTop: =12
-                        Width: =Parent.Width - 32
-                      Children:
-                        - lblUserEmail3:
-                            Control: Label@2.5.1
-                            Properties:
-                              Color: =RGBA(255, 255, 255, 0.6)
-                              Font: =Font.'Segoe UI'
-                              Size: =11
-                              Text: '="User().Email: " & User().Email'
             - conWorkArea3:
                 Control: GroupContainer@1.5.0
                 Variant: AutoLayout
@@ -147,108 +103,53 @@ Screens:
                   PaddingRight: =28
                   PaddingTop: =24
                 Children:
-                  - conHeader3:
-                      Control: GroupContainer@1.5.0
-                      Variant: AutoLayout
-                      Properties:
-                        Height: =50
-                        LayoutDirection: =LayoutDirection.Vertical
-                      Children:
-                        - lblHeaderTitle3:
-                            Control: Label@2.5.1
-                            Properties:
-                              Color: =RGBA(0, 43, 127, 1)
-                              Font: =Font.'Segoe UI'
-                              FontWeight: =FontWeight.Bold
-                              Size: =22
-                              Text: ="Mis solicitudes activas"
-                        - lblHeaderSub3:
-                            Control: Label@2.5.1
-                            Properties:
-                              Color: =RGBA(107, 114, 128, 1)
-                              Font: =Font.'Segoe UI'
-                              Size: =12
-                              Text: '="Origen de datos en vivo: lista SharePoint ""Solicitudes_Cambio"""'
                   - galMisSolicitudes:
                       Control: Gallery@2.15.0
                       Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
                       Properties:
                         DelayItemLoading: =true
-                        Height: =Parent.Height - 100
+                        Height: =Parent.Height - 60
                         Items: =Filter([@'Solicitudes de Cambios'], Solicitante.Email = User().Email)
                         LoadingSpinner: =LoadingSpinner.Data
                         TemplatePadding: =10
-                        TemplateSize: =140
+                        TemplateSize: =100
                         Width: =Parent.Width
                       Children:
-                        - conItemCard:
-                            Control: GroupContainer@1.5.0
-                            Variant: AutoLayout
+                        - lblMisSolTitle:
+                            Control: Label@2.5.1
                             Properties:
-                              BorderColor: =RGBA(228, 232, 240, 1)
-                              BorderStyle: =BorderStyle.Solid
-                              BorderThickness: =1
-                              Fill: =RGBA(255, 255, 255, 1)
-                              Height: =Parent.TemplateHeight - 12
-                              LayoutDirection: =LayoutDirection.Vertical
-                              PaddingBottom: =16
-                              PaddingLeft: =20
-                              PaddingRight: =20
-                              PaddingTop: =16
-                              RadiusBottomLeft: =16
-                              RadiusBottomRight: =16
-                              RadiusTopLeft: =16
-                              RadiusTopRight: =16
-                              Width: =Parent.TemplateWidth
-                            Children:
-                              - lblMisSolTicket:
-                                  Control: Label@2.5.1
-                                  Properties:
-                                    Color: =RGBA(107, 114, 128, 1)
-                                    Font: =Font.'Segoe UI'
-                                    FontWeight: =FontWeight.Semibold
-                                    Size: =11
-                                    Text: ="CHG-" & ThisItem.ID
-                              - lblMisSolTitle:
-                                  Control: Label@2.5.1
-                                  Properties:
-                                    Color: =RGBA(0, 43, 127, 1)
-                                    Font: =Font.'Segoe UI'
-                                    FontWeight: =FontWeight.Bold
-                                    Size: =16
-                                    Text: =ThisItem.Title
-                              - lblMisSolSub:
-                                  Control: Label@2.5.1
-                                  Properties:
-                                    Color: =RGBA(107, 114, 128, 1)
-                                    Font: =Font.'Segoe UI'
-                                    Size: =12
-                                    Text: '="Tipo: " & ThisItem.Tipo_Cambio.Value & " · Creado el " & Text(ThisItem.Created, "dd/mm/yyyy")'
-                              - lblMisSolStateChip:
-                                  Control: Label@2.5.1
-                                  Properties:
-                                    Align: =Align.Center
-                                    Color: |-
-                                      =Switch(
-                                        ThisItem.Estado_Aprobacion.Value,
-                                        "Pendiente", RGBA(146, 110, 20, 1),
-                                        "Aprobado", RGBA(78, 131, 32, 1),
-                                        "Rechazado", RGBA(178, 42, 42, 1),
-                                        RGBA(107, 114, 128, 1)
-                                      )
-                                    Fill: |-
-                                      =Switch(
-                                        ThisItem.Estado_Aprobacion.Value,
-                                        "Pendiente", RGBA(201, 162, 39, 0.15),
-                                        "Aprobado", RGBA(130, 195, 65, 0.15),
-                                        "Rechazado", RGBA(214, 69, 69, 0.15),
-                                        RGBA(243, 244, 246, 1)
-                                      )
-                                    Font: =Font.'Segoe UI'
-                                    FontWeight: =FontWeight.Semibold
-                                    Height: =28
-                                    Size: =12
-                                    Text: =ThisItem.Estado_Aprobacion.Value
-                                    Width: =110
-                                    X: =Parent.Width - 140
-                                    Y: =16
+                              Color: =RGBA(0, 43, 127, 1)
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Bold
+                              Size: =16
+                              Text: =ThisItem.Title
+                              X: =12
+                              Y: =12
+                        - lblMisSolStateChip:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              Color: |-
+                                =Switch(
+                                  ThisItem.Estado_Aprobacion.Value,
+                                  "Pendiente", RGBA(146, 110, 20, 1),
+                                  "Aprobado", RGBA(78, 131, 32, 1),
+                                  "Rechazado", RGBA(178, 42, 42, 1),
+                                  RGBA(107, 114, 128, 1)
+                                )
+                              Fill: |-
+                                =Switch(
+                                  ThisItem.Estado_Aprobacion.Value,
+                                  "Pendiente", RGBA(201, 162, 39, 0.15),
+                                  "Aprobado", RGBA(130, 195, 65, 0.15),
+                                  "Rechazado", RGBA(214, 69, 69, 0.15),
+                                  RGBA(243, 244, 246, 1)
+                                )
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =28
+                              Size: =12
+                              Text: =ThisItem.Estado_Aprobacion.Value
+                              Width: =110
+                              X: =Parent.TemplateWidth - 130
+                              Y: =12
