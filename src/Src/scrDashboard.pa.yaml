@@ -37,7 +37,7 @@ Screens:
                       Properties:
                         Fill: =RGBA(255, 255, 255, 1)
                         Height: =44
-                        Image: ="https://ebfactoryco-my.sharepoint.com/:i:/r/personal/javier_contreras_ebfactory_com/Documents/logo_ebfactory.png"
+                        Image: '="https://ebfactoryco-my.sharepoint.com/:i:/r/personal/javier_contreras_ebfactory_com/Documents/logo_ebfactory.png"'
                         RadiusBottomLeft: =8
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
@@ -131,7 +131,7 @@ Screens:
                               Color: =RGBA(255, 255, 255, 0.6)
                               Font: =Font.'Segoe UI'
                               Size: =11
-                              Text: ="User().Email: " & User().Email
+                              Text: '="User().Email: " & User().Email'
             - conWorkArea:
                 Control: GroupContainer@1.5.0
                 Variant: AutoLayout
@@ -168,7 +168,7 @@ Screens:
                               Color: =RGBA(107, 114, 128, 1)
                               Font: =Font.'Segoe UI'
                               Size: =12
-                              Text: ="Origen de datos en vivo: lista SharePoint ""Solicitudes_Cambio"""
+                              Text: '="Origen de datos en vivo: lista SharePoint ""Solicitudes_Cambio"""'
                   - conHeroBanner:
                       Control: GroupContainer@1.5.0
                       Variant: AutoLayout
