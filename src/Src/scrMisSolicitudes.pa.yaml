@@ -67,7 +67,7 @@ Screens:
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="📊 Inicio / Dashboard"
+                        Text: ="Inicio / Dashboard"
                         Width: =Parent.Width - 40
                   - btnNavNueva3:
                       Control: Classic/Button@2.2.0
@@ -81,7 +81,7 @@ Screens:
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="➕ Nueva Solicitud"
+                        Text: ="Nueva Solicitud"
                         Width: =Parent.Width - 40
                   - btnNavMisSol3:
                       Control: Classic/Button@2.2.0
@@ -95,7 +95,7 @@ Screens:
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="📋 Mis Solicitudes"
+                        Text: ="Mis Solicitudes"
                         Width: =Parent.Width - 40
                   - btnNavCierre3:
                       Control: Classic/Button@2.2.0
@@ -109,7 +109,7 @@ Screens:
                         RadiusBottomRight: =8
                         RadiusTopLeft: =8
                         RadiusTopRight: =8
-                        Text: ="✅ Ejecución y Cierre"
+                        Text: ="Ejecución y Cierre"
                         Width: =Parent.Width - 40
             - conWorkArea3:
                 Control: GroupContainer@1.5.0
