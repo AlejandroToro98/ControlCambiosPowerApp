@@ -1,0 +1,5 @@
+# Power Apps Local gitignore
+src_base/
+ControlDeCambios.msapp
+*.log
+.DS_Store

@@ -1,0 +1,9 @@
+# ************************************************************************************************
+# Canvas App Editor State
+# ************************************************************************************************
+EditorState:
+  ScreensOrder:
+    - scrDashboard
+    - scrNuevaSolicitud
+    - scrMisSolicitudes
+    - scrEjecucionYCierre
