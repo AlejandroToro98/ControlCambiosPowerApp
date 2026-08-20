@@ -1,5 +1,5 @@
 # ************************************************************************************************
-# Canvas App Screen: scrDashboard (NOWledge Professional Architecture Standard)
+# Canvas App Screen: scrDashboard (Change Management eBFactory)
 # ************************************************************************************************
 Screens:
   scrDashboard:
@@ -176,7 +176,7 @@ Screens:
                               Height: =20
                               Size: =12
                               Text: '="Origen de datos en vivo: lista SharePoint ""Solicitudes_Cambio"""'
-                  - ctnV_HeroCard:
+                  - ctnV_HeroBanner:
                       Control: GroupContainer@1.5.0
                       Variant: AutoLayout
                       Properties:

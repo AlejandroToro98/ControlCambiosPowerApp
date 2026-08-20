@@ -1,5 +1,5 @@
 # ************************************************************************************************
-# Canvas App Screen: scrNuevaSolicitud (NOWledge Professional Architecture Standard)
+# Canvas App Screen: scrNuevaSolicitud (Change Management eBFactory)
 # ************************************************************************************************
 Screens:
   scrNuevaSolicitud:
@@ -195,31 +195,106 @@ Screens:
                         RadiusTopLeft: =16
                         RadiusTopRight: =16
                       Children:
-                        - txt_Nombre:
-                            Control: Classic/TextInput@2.3.2
+                        - ctnH_FormHeaderRow:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
                             Properties:
-                              BorderColor: =gblColorBorder
-                              Height: =40
-                              HintText: '="Ej. Migración del clúster de base de datos"'
-                              RadiusBottomLeft: =8
-                              RadiusBottomRight: =8
-                              RadiusTopLeft: =8
-                              RadiusTopRight: =8
-                              Width: =Parent.Width - 48
-                        - dd_Tipo:
-                            Control: Classic/Dropdown@2.3.1
+                              Height: =36
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                            Children:
+                              - lbl_FormHeaderTitle:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Color: =gblColorPrimary
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =18
+                                    Text: ="Solicitud de cambio"
+                              - lbl_FormHeaderChip:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Align: =Align.Center
+                                    Color: =RGBA(0, 31, 92, 1)
+                                    Fill: =RGBA(239, 246, 255, 1)
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =26
+                                    Size: =12
+                                    Text: ="Estado inicial: Pendiente"
+                                    Width: =150
+                                    X: =Parent.Width - 150
+                        - lbl_FormHeaderSub:
+                            Control: Label@2.5.1
                             Properties:
-                              BorderColor: =gblColorBorder
-                              Height: =40
-                              Items: =Choices([@'Solicitudes de Cambios'].Tipo_Cambio)
-                              Width: =Parent.Width - 48
-                        - dd_Categoria:
-                            Control: Classic/Dropdown@2.3.1
+                              Color: =RGBA(107, 114, 128, 1)
+                              Font: =Font.'Segoe UI'
+                              Size: =12
+                              Text: ="Los campos marcados con * son obligatorios."
+                        - ctnH_Row1:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
                             Properties:
-                              BorderColor: =gblColorBorder
-                              Height: =40
-                              Items: =Choices([@'Solicitudes de Cambios'].Categoria_Cambio)
-                              Width: =Parent.Width - 48
+                              Height: =65
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =16
+                            Children:
+                              - ctnV_Col1Left:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    FillPortions: =1
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                  Children:
+                                    - lbl_TipoLabel:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          Color: =RGBA(31, 41, 55, 1)
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =13
+                                          Text: ="Tipo de cambio *"
+                                    - dd_Tipo:
+                                        Control: Classic/Dropdown@2.3.1
+                                        Properties:
+                                          BorderColor: =gblColorBorder
+                                          Height: =40
+                                          Items: =Choices([@'Solicitudes de Cambios'].Tipo_Cambio)
+                                          Width: =Parent.Width
+                              - ctnV_Col1Right:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    FillPortions: =1
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                  Children:
+                                    - lbl_NombreLabel:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          Color: =RGBA(31, 41, 55, 1)
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =13
+                                          Text: ="Nombre del cambio *"
+                                    - txt_Nombre:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          BorderColor: =gblColorBorder
+                                          Height: =40
+                                          HintText: '="Ej. Migración del clúster de base de datos"'
+                                          RadiusBottomLeft: =8
+                                          RadiusBottomRight: =8
+                                          RadiusTopLeft: =8
+                                          RadiusTopRight: =8
+                                          Width: =Parent.Width
+                        - lbl_JustificacionLabel:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(31, 41, 55, 1)
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Size: =13
+                              Text: ="Justificación del cambio *"
                         - txt_Justificacion:
                             Control: Classic/TextInput@2.3.2
                             Properties:
@@ -231,48 +306,207 @@ Screens:
                               RadiusBottomRight: =8
                               RadiusTopLeft: =8
                               RadiusTopRight: =8
-                              Width: =Parent.Width - 48
-                        - btn_EnviarSolicitud:
-                            Control: Classic/Button@2.2.0
+                              Width: =Parent.Width
+                        - ctnH_Row2:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
                             Properties:
-                              Color: =RGBA(255, 255, 255, 1)
-                              Fill: =gblColorSecondary
+                              Height: =65
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =16
+                            Children:
+                              - ctnV_Col2Left:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    FillPortions: =1
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                  Children:
+                                    - lbl_CategoriaLabel:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          Color: =RGBA(31, 41, 55, 1)
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =13
+                                          Text: ="Categoría del cambio"
+                                    - dd_Categoria:
+                                        Control: Classic/Dropdown@2.3.1
+                                        Properties:
+                                          BorderColor: =gblColorBorder
+                                          Height: =40
+                                          Items: =Choices([@'Solicitudes de Cambios'].Categoria_Cambio)
+                                          Width: =Parent.Width
+                              - ctnV_Col2Right:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    FillPortions: =1
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                  Children:
+                                    - lbl_ImpactoLabel:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          Color: =RGBA(31, 41, 55, 1)
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =13
+                                          Text: ="Nivel de impacto"
+                                    - dd_Impacto:
+                                        Control: Classic/Dropdown@2.3.1
+                                        Properties:
+                                          BorderColor: =gblColorBorder
+                                          Height: =40
+                                          Items: =Choices([@'Solicitudes de Cambios'].Nivel_Impacto)
+                                          Width: =Parent.Width
+                        - lbl_AlcanceLabel:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(31, 41, 55, 1)
                               Font: =Font.'Segoe UI'
-                              FontWeight: =FontWeight.Bold
-                              Height: =42
-                              OnSelect: |-
-                                =If(
-                                  IsBlank(txt_Nombre.Text) || IsBlank(txt_Justificacion.Text) || IsBlank(dd_Tipo.Selected.Value),
-                                  Notify("Completa los campos obligatorios antes de enviar", NotificationType.Error),
-                                  Set(
-                                    varRegistro,
-                                    Patch(
-                                      [@'Solicitudes de Cambios'],
-                                      Defaults([@'Solicitudes de Cambios']),
-                                      {
-                                        Title: txt_Nombre.Text,
-                                        Tipo_Cambio: { Value: dd_Tipo.Selected.Value },
-                                        Justificacion: txt_Justificacion.Text,
-                                        Categoria_Cambio: { Value: dd_Categoria.Selected.Value },
-                                        Solicitante: {
-                                          '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                                          Claims: "i:0#.f|membership|" & gblUser.Email,
-                                          DisplayName: gblUser.FullName,
-                                          Email: gblUser.Email,
-                                          Department: "",
-                                          JobTitle: "",
-                                          Picture: ""
-                                        },
-                                        Estado_Aprobacion: { Value: "Pendiente" }
-                                      }
-                                    )
-                                  );
-                                  Notify("Solicitud CHG-" & varRegistro.ID & " enviada a aprobación correctamente", NotificationType.Success);
-                                  Navigate(scrMisSolicitudes, ScreenTransition.Fade)
-                                )
+                              FontWeight: =FontWeight.Semibold
+                              Size: =13
+                              Text: ="Alcance del cambio"
+                        - txt_Alcance:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              BorderColor: =gblColorBorder
+                              Height: =60
+                              Mode: =TextMode.MultiLine
                               RadiusBottomLeft: =8
                               RadiusBottomRight: =8
                               RadiusTopLeft: =8
                               RadiusTopRight: =8
-                              Text: ="Enviar a aprobación"
-                              Width: =180
+                              Width: =Parent.Width
+                        - ctnH_Row3:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
+                            Properties:
+                              Height: =85
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =16
+                            Children:
+                              - ctnV_Col3Left:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    FillPortions: =1
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                  Children:
+                                    - lbl_BeneficioLabel:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          Color: =RGBA(31, 41, 55, 1)
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =13
+                                          Text: ="Beneficio esperado"
+                                    - txt_Beneficio:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          BorderColor: =gblColorBorder
+                                          Height: =60
+                                          Mode: =TextMode.MultiLine
+                                          RadiusBottomLeft: =8
+                                          RadiusBottomRight: =8
+                                          RadiusTopLeft: =8
+                                          RadiusTopRight: =8
+                                          Width: =Parent.Width
+                              - ctnV_Col3Right:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    FillPortions: =1
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                  Children:
+                                    - lbl_RiesgosLabel:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          Color: =RGBA(31, 41, 55, 1)
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =13
+                                          Text: ="Riesgos identificados"
+                                    - txt_Riesgos:
+                                        Control: Classic/TextInput@2.3.2
+                                        Properties:
+                                          BorderColor: =gblColorBorder
+                                          Height: =60
+                                          Mode: =TextMode.MultiLine
+                                          RadiusBottomLeft: =8
+                                          RadiusBottomRight: =8
+                                          RadiusTopLeft: =8
+                                          RadiusTopRight: =8
+                                          Width: =Parent.Width
+                        - ctnH_FormFooterActions:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
+                            Properties:
+                              Height: =44
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =12
+                            Children:
+                              - btn_GuardarBorrador:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    Color: =RGBA(31, 41, 55, 1)
+                                    Fill: =RGBA(243, 244, 246, 1)
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =42
+                                    OnSelect: =Notify("Borrador guardado", NotificationType.Information)
+                                    RadiusBottomLeft: =8
+                                    RadiusBottomRight: =8
+                                    RadiusTopLeft: =8
+                                    RadiusTopRight: =8
+                                    Text: ="Guardar borrador"
+                                    Width: =160
+                              - btn_EnviarSolicitud:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Fill: =gblColorSecondary
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =42
+                                    OnSelect: |-
+                                      =If(
+                                        IsBlank(txt_Nombre.Text) || IsBlank(txt_Justificacion.Text) || IsBlank(dd_Tipo.Selected.Value),
+                                        Notify("Completa los campos obligatorios antes de enviar", NotificationType.Error),
+                                        Set(
+                                          varRegistro,
+                                          Patch(
+                                            [@'Solicitudes de Cambios'],
+                                            Defaults([@'Solicitudes de Cambios']),
+                                            {
+                                              Title: txt_Nombre.Text,
+                                              Tipo_Cambio: { Value: dd_Tipo.Selected.Value },
+                                              Justificacion: txt_Justificacion.Text,
+                                              Categoria_Cambio: { Value: dd_Categoria.Selected.Value },
+                                              Alcance: txt_Alcance.Text,
+                                              Beneficio_Esperado: txt_Beneficio.Text,
+                                              Riesgos_Identificados: txt_Riesgos.Text,
+                                              Nivel_Impacto: { Value: dd_Impacto.Selected.Value },
+                                              Solicitante: {
+                                                '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                                                Claims: "i:0#.f|membership|" & gblUser.Email,
+                                                DisplayName: gblUser.FullName,
+                                                Email: gblUser.Email,
+                                                Department: "",
+                                                JobTitle: "",
+                                                Picture: ""
+                                              },
+                                              Estado_Aprobacion: { Value: "Pendiente" }
+                                            }
+                                          )
+                                        );
+                                        Notify("Solicitud CHG-" & varRegistro.ID & " enviada a aprobación correctamente", NotificationType.Success);
+                                        Navigate(scrMisSolicitudes, ScreenTransition.Fade)
+                                      )
+                                    RadiusBottomLeft: =8
+                                    RadiusBottomRight: =8
+                                    RadiusTopLeft: =8
+                                    RadiusTopRight: =8
+                                    Text: ="Enviar a aprobación"
+                                    Width: =180

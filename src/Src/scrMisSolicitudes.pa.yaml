@@ -1,5 +1,5 @@
 # ************************************************************************************************
-# Canvas App Screen: scrMisSolicitudes (NOWledge Professional Architecture Standard)
+# Canvas App Screen: scrMisSolicitudes (Change Management eBFactory)
 # ************************************************************************************************
 Screens:
   scrMisSolicitudes:
@@ -185,44 +185,77 @@ Screens:
                         Items: =Filter([@'Solicitudes de Cambios'], Solicitante.Email = gblUser.Email)
                         LoadingSpinner: =LoadingSpinner.Data
                         TemplatePadding: =10
-                        TemplateSize: =100
+                        TemplateSize: =140
                         Width: =Parent.Width
                       Children:
-                        - lbl_MisSolTitle:
-                            Control: Label@2.5.1
+                        - ctnV_ItemCard:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
                             Properties:
-                              Color: =gblColorPrimary
-                              Font: =Font.'Segoe UI'
-                              FontWeight: =FontWeight.Bold
-                              Size: =16
-                              Text: =ThisItem.Title
-                              X: =12
-                              Y: =12
-                        - lbl_MisSolStateChip:
-                            Control: Label@2.5.1
-                            Properties:
-                              Align: =Align.Center
-                              Color: |-
-                                =Switch(
-                                  ThisItem.Estado_Aprobacion.Value,
-                                  "Pendiente", RGBA(146, 110, 20, 1),
-                                  "Aprobado", RGBA(78, 131, 32, 1),
-                                  "Rechazado", RGBA(178, 42, 42, 1),
-                                  RGBA(107, 114, 128, 1)
-                                )
-                              Fill: |-
-                                =Switch(
-                                  ThisItem.Estado_Aprobacion.Value,
-                                  "Pendiente", RGBA(201, 162, 39, 0.15),
-                                  "Aprobado", RGBA(130, 195, 65, 0.15),
-                                  "Rechazado", RGBA(214, 69, 69, 0.15),
-                                  RGBA(243, 244, 246, 1)
-                                )
-                              Font: =Font.'Segoe UI'
-                              FontWeight: =FontWeight.Semibold
-                              Height: =28
-                              Size: =12
-                              Text: =ThisItem.Estado_Aprobacion.Value
-                              Width: =110
-                              X: =Parent.TemplateWidth - 130
-                              Y: =12
+                              BorderColor: =gblColorBorder
+                              BorderStyle: =BorderStyle.Solid
+                              BorderThickness: =1
+                              Fill: =gblColorCard
+                              Height: =Parent.TemplateHeight - 12
+                              LayoutDirection: =LayoutDirection.Vertical
+                              PaddingBottom: =16
+                              PaddingLeft: =20
+                              PaddingRight: =20
+                              PaddingTop: =16
+                              RadiusBottomLeft: =16
+                              RadiusBottomRight: =16
+                              RadiusTopLeft: =16
+                              RadiusTopRight: =16
+                              Width: =Parent.TemplateWidth
+                            Children:
+                              - lbl_MisSolTicket:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Color: =RGBA(107, 114, 128, 1)
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    Size: =11
+                                    Text: ="CHG-" & ThisItem.ID
+                              - lbl_MisSolTitle:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Color: =gblColorPrimary
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =16
+                                    Text: =ThisItem.Title
+                              - lbl_MisSolSub:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Color: =RGBA(107, 114, 128, 1)
+                                    Font: =Font.'Segoe UI'
+                                    Size: =12
+                                    Text: '="Tipo: " & ThisItem.Tipo_Cambio.Value & " · Creado el " & Text(ThisItem.Created, "dd/mm/yyyy")'
+                              - lbl_MisSolStateChip:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    Align: =Align.Center
+                                    Color: |-
+                                      =Switch(
+                                        ThisItem.Estado_Aprobacion.Value,
+                                        "Pendiente", RGBA(146, 110, 20, 1),
+                                        "Aprobado", RGBA(78, 131, 32, 1),
+                                        "Rechazado", RGBA(178, 42, 42, 1),
+                                        RGBA(107, 114, 128, 1)
+                                      )
+                                    Fill: |-
+                                      =Switch(
+                                        ThisItem.Estado_Aprobacion.Value,
+                                        "Pendiente", RGBA(201, 162, 39, 0.15),
+                                        "Aprobado", RGBA(130, 195, 65, 0.15),
+                                        "Rechazado", RGBA(214, 69, 69, 0.15),
+                                        RGBA(243, 244, 246, 1)
+                                      )
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =28
+                                    Size: =12
+                                    Text: =ThisItem.Estado_Aprobacion.Value
+                                    Width: =110
+                                    X: =Parent.Width - 140
+                                    Y: =16
