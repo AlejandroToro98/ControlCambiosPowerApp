@@ -1,5 +1,7 @@
-# Power Apps Local gitignore
-src_base/
-ControlDeCambios.msapp
-*.log
-.DS_Store
+.vs/
+bin/
+obj/
+*.msapp
+NOWledge*
+temp_nowledge/
+solution/

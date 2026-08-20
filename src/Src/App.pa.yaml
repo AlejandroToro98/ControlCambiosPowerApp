@@ -1,7 +1,18 @@
 # ************************************************************************************************
-# Canvas App Main Application Definition
+# Canvas App: App Configuration & Global State (NOWledge Architecture Standard)
 # ************************************************************************************************
-App:
+App As appinfo:
   Properties:
+    BackEnabled: =true
+    LoadingSpinnerColor: =RGBA(0, 43, 127, 1)
+    OnStart: |-
+      =Set(gblUser, User());
+      Set(gblColorPrimary, RGBA(0, 43, 127, 1));
+      Set(gblColorSecondary, RGBA(130, 195, 65, 1));
+      Set(gblColorBg, RGBA(245, 247, 250, 1));
+      Set(gblColorCard, RGBA(255, 255, 255, 1));
+      Set(gblColorBorder, RGBA(228, 232, 240, 1));
+      Set(gblFormMode, FormMode.New);
+      Set(gblSelectedRecord, Blank());
+      Set(gblIsMobile, App.Width < 800)
     StartScreen: =scrDashboard
-    Theme: =PowerAppsTheme
